@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us -Jules Fresh Fruits</title>
-
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
 *{
@@ -32,6 +33,25 @@ header{
     left:0;
     width:100%;
     z-index:1000;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.log{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .logo{
@@ -171,6 +191,35 @@ footer{
     color: white;
     font-weight: bold;
 }
+.log{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:30px;
+    font-weight:bold;
+}
+@keyframes moveSide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.logo{
+    animation: moveSide 2s ease-in-out infinite;
+}    
 </style>
 </head>
 
@@ -179,7 +228,7 @@ footer{
 <header>
 
     <div class="logo">
-        🍌 Jules Fresh Fruits
+        <img src="logo.png" class="log"> Jules Fresh Fruits
     </div>
 
     <nav>
@@ -204,18 +253,23 @@ footer{
             </p>
 
             <div class="info-box">
-                <h3>🏡 Address</h3>
+                <h3><i class="fa-solid fa-location-dot"></i> Address</h3>
                 <p>Nyanza, Rwanda</p>
             </div>
 
             <div class="info-box">
-                <h3>📞 Phone</h3>
+                <h3><i class="fa-solid fa-phone"></i> Phone</h3>
                 <p>+250 700 000 000</p>
             </div>
 
             <div class="info-box">
-                <h3>📧 Email</h3>
+                <h3><i class="fa-solid fa-envelope"></i> Email</h3>
                 <p>julesfreshfruits@gmail.com</p>
+            </div>
+
+             <div class="info-box">
+                <h3><i class="fa-brands fa-whatsapp"></i> Whatsapp</h3>
+                <p>+250 700 000 000</p>
             </div>
 
         </div>
@@ -255,7 +309,21 @@ footer{
     </div>
 
 </section>
+<div>
+  <span style="background:green; color:white; padding:5px 10px; border-radius:20px;">
+  <i class="fa-solid fa-location-dot"></i> Jules Fruits Market
+</span>
+<div style="width:100%; margin-top:30px;">
+<iframe
+src="https://www.google.com/maps?q=-2.3510,29.7500&output=embed"
+width="100%"
+height="350"
+style="border:0; border-radius:15px;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
 
+</div>
 <footer>
     <p>&copy; 2026 Jules Fresh Fruits Market | All Rights Reserved</p>
 </footer>
