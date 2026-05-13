@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services</title>
-
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
 *{
@@ -31,7 +32,40 @@ header{
     font-size:30px;
     font-weight:bold;
 }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    font-weight:bold;
+}
+@keyframes moveSide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 
+.logo{
+    animation: moveSide 2s ease-in-out infinite;
+}    
+
+.log{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 nav a{
     color:white;
     text-decoration:none;
@@ -149,6 +183,20 @@ footer{
     padding:20px;
     margin-top:4cm;
 }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:30px;
+    font-weight:bold;
+}
+.log{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
 
 </style>
 </head>
@@ -157,7 +205,7 @@ footer{
 
 <header>
 
-    <div class="logo">🍌 Jules Fresh Fruits</div>
+    <div class="logo"><img src="logo.png" class="log"> Jules Fresh Fruits</div>
 
     <nav>
         <a href="fruits home.html">Home</a>
@@ -174,17 +222,17 @@ footer{
     <div class="service-grid">
 
         <button class="service" onclick="openForm('Fast Delivery')">
-            <h3>🚚 Fast Delivery</h3>
+            <h3><i class="fa-solid fa-truck-fast"></i>   Fast Delivery</h3>
             <p>We deliver fresh fruits quickly to your home.</p>
         </button>
 
         <button class="service" onclick="openForm('Fresh Products')">
-            <h3>🍍 Fresh Products</h3>
+            <h3><i class="fa-solid fa-basket-shopping"></i>   Fresh Products</h3>
             <p>Healthy and natural fruits every day.</p>
         </button>
 
         <button class="service" onclick="openForm('Affordable Prices')">
-            <h3>💰 Affordable Prices</h3>
+            <h3><i class="fa-solid fa-coins"></i>   Affordable Prices</h3>
             <p>Best quality fruits at affordable prices.</p>
         </button>
 
@@ -204,10 +252,6 @@ footer{
 
         <div class="input-box">
             <input type="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="input-box">
-            <input type="text" id="selectedService" readonly>
         </div>
 
         <div class="input-box">
@@ -234,14 +278,10 @@ footer{
 function openForm(serviceName){
 
     document.getElementById("serviceForm").style.display = "block";
-
-    document.getElementById("selectedService").value = serviceName;
-
     document.getElementById("serviceTitle").innerHTML =
     "Request For " + serviceName;
 
 }
-
 </script>
 
 </body>
