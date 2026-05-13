@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jules Fresh Fruits- shop</title>
-
+<title>Jules Fresh Fruits Shop</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
 body{
@@ -12,31 +12,73 @@ body{
     font-family:Arial, sans-serif;
     background:#f4fff4;
 }
-header{
-    background:green;
-    color:white;
-    padding:20px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-header{
-    background:green;
-    color:white;
-    padding:20px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
 
-   
+header{
+    background:green;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     position:fixed;
     top:0;
     width:95%;
     z-index:1000;
 }
 .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
     font-size:30px;
     font-weight:bold;
+}
+@keyframes moveSide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.logo{
+    animation: moveSide 2s ease-in-out infinite;
+}    
+
+.log{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.log{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+}
+
+.search-box input{
+    padding:8px;
+    border-radius:5px;
+    border:none;
+    outline:none;
+    width:200px;
 }
 
 nav a{
@@ -49,8 +91,6 @@ nav a{
 nav a:hover{
     color:yellow;
 }
-
-
 .hero{
     background:url('fruits.jpg') center/cover;
     height:350px;
@@ -59,6 +99,7 @@ nav a:hover{
     align-items:center;
     color:white;
     text-align:center;
+    margin-top:90px;
 }
 
 .hero h1{
@@ -92,6 +133,7 @@ nav a:hover{
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
     transition:0.3s;
     text-align:center;
+    padding-bottom: 1cm;
 }
 
 .card:hover{
@@ -122,10 +164,41 @@ nav a:hover{
     margin:15px;
     border-radius:5px;
     cursor:pointer;
-    font-size:16px;
 }
 
 .btn:hover{
+    background:darkgreen;
+}
+.page{
+    display:none;
+}
+
+.active{
+    display:grid;
+}
+
+.hide{
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+}
+
+.pagination{
+    text-align:center;
+    margin:30px;
+}
+
+.pagination button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    background:green;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.pagination button:hover{
     background:darkgreen;
 }
 
@@ -134,22 +207,98 @@ footer{
     color:white;
     text-align:center;
     padding:20px;
-    margin-top:40px;
+}
+.buy-btn{
+    background-color: green;
+    color: white;
+    border: none;
+    height: 1cm;
+    width: 3cm;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buy-btn:hover{
+    background-color: darkgreen;
 }
 
+.form-container{
+    width:90%;
+    max-width:500px;
+    background:white;
+    margin:40px auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+
+    display:none;
+}
+
+.form-container h2{
+    color:green;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input,
+.input-box textarea{
+    width:100%;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+    border-color:green;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+.send-btn{
+    width:100%;
+    padding:15px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.send-btn:hover{
+    background:darkgreen;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-     <div class="logo">🍌Jules Fresh Fruits</div>
 
-    <nav>
-        <a href="fruits home.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<div class="logo">
+    <img src="logo.png" class="log">
+    Jules Fresh Fruits
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search fruits..." onkeyup="searchFruits()">
+</div>
+
+<nav>
+    <a href="fruits home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
 </header>
 
 <div class="hero">
@@ -158,78 +307,119 @@ footer{
 
 <div class="container">
 
-    <div class="title">
-        Available Fruits
-    </div>
+<div class="title">Available Fruits</div>
 
-    <div class="grid">
+<div class="grid page active" id="page1">
 
-        <div class="card">
-            <img src="apples.jpg" alt="">
-            <h2>Apples</h2>
-            <p>Fresh red apples full of vitamins.</p>
-            <p class="price">3,000 RWF / Kg</p>
-            <button class="btn" onclick="alert('You selected Apples, wait for delivery🚚')">Buy Now</button>
-        </div>
+    <div class="card"><img src="apples.jpg"><h2>Apples</h2><p class="price">3,000 RWF / kg</p><button class="buy-btn" onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="bananas.jpg"><h2>Bananas</h2><p class="price">2,500 RWF / kg</p><button class="buy-btn" onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="orange.jpg"><h2>Oranges</h2><p class="price">4,000 RWF / kg</p><button class="buy-btn"  onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="mangoes.jpg"><h2>Mangoes</h2><p class="price">5,000 RWF / kg</p><button class="buy-btn"  onclick="openForm('Fresh Products')">Buy now</button></div>
 
-        <div class="card">
-            <img src="bananas.jpg" alt="">
-            <h2>Bananas</h2>
-            <p>Sweet bananas rich in energy.</p>
-            <p class="price">2,500 RWF / Kg</p>
-            <button class="btn"onclick="alert('You selected Bananas, wait for delivery🚚')">Buy Now</button>
-        </div>
-
-        <div class="card">
-            <img src="orange.jpg" alt="">
-            <h2>Oranges</h2>
-            <p>Juicy oranges full of Vitamin C.</p>
-            <p class="price">4,000 RWF / Kg</p>
-            <button class="btn" onclick="alert('Yu selected Oranges, wait for delivery🚚')">Buy Now</button>
-        </div>
-
-
-        <div class="card">
-            <img src="mangoes.jpg" alt="">
-            <h2>Mangoes</h2>
-            <p>Delicious tropical mangoes.</p>
-            <p class="price">5,000 RWF / Kg</p>
-            <button class="btn" onclick="alert('You selected Mangoes, wait for delivery🚚')">Buy Now</button>
-        </div>
-
-
-        <div class="card">
-            <img src="pineaple.jpg" alt="">
-            <h2>Pineapple</h2>
-            <p>Fresh pineapple directly from farm.</p>
-            <p class="price">3,500 RWF / kg</p>
-            <button class="btn" onclick="alert('You selected Pineapple, wait for delivery🚚')">Buy Now</button>
-        </div>
-
-        <div class="card">
-            <img src="watermelon.jpg" alt="">
-            <h2>Watermelon</h2>
-            <p>Cool and sweet watermelon.</p>
-            <p class="price">6,000 RWF / kg</p>
-            <button class="btn" onclick="alert('You selected Watermelon, wait for delivery🚚')">Buy Now</button>
-        </div>
-        <div class="card">
-            <img src="coconuts.jpg" alt="">
-            <h2>Coconuts</h2>
-            <p>Sweet and fresh coconuts.</p>
-            <p class="price">4,000 RWF / kg</p>
-            <button class="btn" onclick="alert('You selected Coconuts, wait for delivery🚚')">Buy Now</button>
-    </div>
-    <div class="card">
-            <img src="avocadoes.jpg" alt="">
-            <h2>Avocadoes</h2>
-            <p>Sweet and fresh avacadoes.</p>
-            <p class="price">3,000 RWF / kg</p>
-            <button class="btn" onclick="alert('You selected Avocadoes, wait for delivery🚚')">Buy Now</button>
-    </div>
 </div>
+
+<div class="grid page" id="page2">
+    <div class="card"><img src="pineaple.jpg"><h2>Pineapple</h2><p class="price">3,500 RWF / kg</p><button class="buy-btn" onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="watermelon.jpg"><h2>Watermelon</h2><p class="price">6,000 RWF / kg</p><button class="buy-btn"  onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="coconuts.jpg"><h2>Coconuts</h2><p class="price">4,000 RWF / kg</p><button class="buy-btn"  onclick="openForm('Fresh Products')"> Buy now</button></div>
+    <div class="card"><img src="avocadoes.jpg"><h2>Avocadoes</h2><p class="price">3,000 RWF / kg</p><button class="buy-btn"  onclick="openForm('Fresh Products')">Buy now</button></div>
+
+</div>
+<div class="grid page" id="page3">
+
+    <div class="card"><img src="grapes.jpg"><h2>Grapes</h2><p class="price">5,000 RWF / kg</p><button class="buy-btn" onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="strawberries.jpg"><h2>Strawberries</h2><p class="price">6,000 RWF / kg</p><button class="buy-btn"  onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="passion.jpg"><h2>Passion fruit</h2><p class="price">4,000 RWF / kg</p><button class="buy-btn" onclick="openForm('Fresh Products')">Buy now</button></div>
+    <div class="card"><img src="lemon.jpg"><h2>Lemons</h2><p class="price">3,000 RWF / kg</p><button class="buy-btn" onclick="openForm('Fresh Products')">Buy now</button></div>
+    
+</div>
+<div class="pagination">
+    <button onclick="prevPage()">⬅ Previous</button>
+    <button onclick="nextPage()">Next ➡</button>
+</div>
+
+</div>
+
+<div class="form-container" id="serviceForm">
+
+    <h2 id="serviceTitle">Service Request</h2>
+
+    <form>
+
+        <div class="input-box">
+            <input type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-box">
+            <input type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-box">
+            <textarea placeholder="Write more details here..."></textarea>
+        </div>
+
+        <button 
+        type="submit" 
+        class="send-btn"
+        onclick="alert('✅ Service request sent successfully!')">
+            Submit Request
+        </button>
+
+    </form>
+
+</div>
+
 <footer>
-    <p>&copy;2026 Jules Fresh fruit Advertisement all right reselved</p>
+    <p>&copy;2026 Jules Fresh Fruits Market</p>
 </footer>
+<script>
+
+function openForm(serviceName){
+
+    document.getElementById("serviceForm").style.display = "block";
+    document.getElementById("serviceTitle").innerHTML =
+    "Request For " + serviceName;
+
+}
+
+let currentPage = 1;
+let totalPages = 3;
+
+function showPage(page){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + page).classList.add('active');
+}
+
+function nextPage(){
+    if(currentPage < totalPages){
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage(){
+    if(currentPage > 1){
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+function searchFruits(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for(let i = 0; i < cards.length; i++){
+        let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+
+        if(title.includes(input)){
+            cards[i].classList.remove("hide");
+        }else{
+            cards[i].classList.add("hide");
+        }
+    }
+}
+
+</script>
+
 </body>
 </html>
