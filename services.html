@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4fff4;
+}
+
+header{
+    background:green;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+.services{
+    padding:60px 30px;
+    text-align:center;
+}
+
+.services h2{
+    color:green;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.service:hover{
+    transform:scale(1.05);
+    background:orange;
+    color:white;
+}
+
+.service h3{
+    color:green;
+    margin-bottom:15px;
+}
+
+.service:hover h3{
+    color:white;
+}
+
+.form-container{
+    width:90%;
+    max-width:500px;
+    background:white;
+    margin:40px auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+
+    display:none;
+}
+
+.form-container h2{
+    color:green;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input,
+.input-box textarea{
+    width:100%;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+    border-color:green;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+.send-btn{
+    width:100%;
+    padding:15px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.send-btn:hover{
+    background:darkgreen;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:4cm;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🍌 Jules Fresh Fruits</div>
+
+    <nav>
+        <a href="fruits home.html">Home</a>
+        <a href="#">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<section class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+
+        <button class="service" onclick="openForm('Fast Delivery')">
+            <h3>🚚 Fast Delivery</h3>
+            <p>We deliver fresh fruits quickly to your home.</p>
+        </button>
+
+        <button class="service" onclick="openForm('Fresh Products')">
+            <h3>🍍 Fresh Products</h3>
+            <p>Healthy and natural fruits every day.</p>
+        </button>
+
+        <button class="service" onclick="openForm('Affordable Prices')">
+            <h3>💰 Affordable Prices</h3>
+            <p>Best quality fruits at affordable prices.</p>
+        </button>
+
+    </div>
+
+</section>
+
+<div class="form-container" id="serviceForm">
+
+    <h2 id="serviceTitle">Service Request</h2>
+
+    <form>
+
+        <div class="input-box">
+            <input type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-box">
+            <input type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-box">
+            <input type="text" id="selectedService" readonly>
+        </div>
+
+        <div class="input-box">
+            <textarea placeholder="Write more details here..."></textarea>
+        </div>
+
+        <button 
+        type="submit" 
+        class="send-btn"
+        onclick="alert('✅ Service request sent successfully!')">
+            Submit Request
+        </button>
+
+    </form>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Jules Fresh Fruits Market | All Rights Reserved</p>
+</footer>
+
+<script>
+
+function openForm(serviceName){
+
+    document.getElementById("serviceForm").style.display = "block";
+
+    document.getElementById("selectedService").value = serviceName;
+
+    document.getElementById("serviceTitle").innerHTML =
+    "Request For " + serviceName;
+
+}
+
+</script>
+
+</body>
+</html>

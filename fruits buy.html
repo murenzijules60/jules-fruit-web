@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jules Fresh Fruits- shop</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4fff4;
+}
+header{
+    background:green;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header{
+    background:green;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+   
+    position:fixed;
+    top:0;
+    width:95%;
+    z-index:1000;
+}
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+
+.hero{
+    background:url('fruits.jpg') center/cover;
+    height:350px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+    border-radius:10px;
+}
+
+.container{
+    padding:30px;
+}
+
+.title{
+    text-align:center;
+    font-size:35px;
+    color:green;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h2{
+    color:green;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    color:orange;
+}
+
+.btn{
+    background:green;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    margin:15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:darkgreen;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+     <div class="logo">🍌Jules Fresh Fruits</div>
+
+    <nav>
+        <a href="fruits home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Healthy Fruits For Healthy Life</h1>
+</div>
+
+<div class="container">
+
+    <div class="title">
+        Available Fruits
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="apples.jpg" alt="">
+            <h2>Apples</h2>
+            <p>Fresh red apples full of vitamins.</p>
+            <p class="price">3,000 RWF / Kg</p>
+            <button class="btn" onclick="alert('You selected Apples, wait for delivery🚚')">Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="bananas.jpg" alt="">
+            <h2>Bananas</h2>
+            <p>Sweet bananas rich in energy.</p>
+            <p class="price">2,500 RWF / Kg</p>
+            <button class="btn"onclick="alert('You selected Bananas, wait for delivery🚚')">Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="orange.jpg" alt="">
+            <h2>Oranges</h2>
+            <p>Juicy oranges full of Vitamin C.</p>
+            <p class="price">4,000 RWF / Kg</p>
+            <button class="btn" onclick="alert('Yu selected Oranges, wait for delivery🚚')">Buy Now</button>
+        </div>
+
+
+        <div class="card">
+            <img src="mangoes.jpg" alt="">
+            <h2>Mangoes</h2>
+            <p>Delicious tropical mangoes.</p>
+            <p class="price">5,000 RWF / Kg</p>
+            <button class="btn" onclick="alert('You selected Mangoes, wait for delivery🚚')">Buy Now</button>
+        </div>
+
+
+        <div class="card">
+            <img src="pineaple.jpg" alt="">
+            <h2>Pineapple</h2>
+            <p>Fresh pineapple directly from farm.</p>
+            <p class="price">3,500 RWF / kg</p>
+            <button class="btn" onclick="alert('You selected Pineapple, wait for delivery🚚')">Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="watermelon.jpg" alt="">
+            <h2>Watermelon</h2>
+            <p>Cool and sweet watermelon.</p>
+            <p class="price">6,000 RWF / kg</p>
+            <button class="btn" onclick="alert('You selected Watermelon, wait for delivery🚚')">Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="coconuts.jpg" alt="">
+            <h2>Coconuts</h2>
+            <p>Sweet and fresh coconuts.</p>
+            <p class="price">4,000 RWF / kg</p>
+            <button class="btn" onclick="alert('You selected Coconuts, wait for delivery🚚')">Buy Now</button>
+    </div>
+    <div class="card">
+            <img src="avocadoes.jpg" alt="">
+            <h2>Avocadoes</h2>
+            <p>Sweet and fresh avacadoes.</p>
+            <p class="price">3,000 RWF / kg</p>
+            <button class="btn" onclick="alert('You selected Avocadoes, wait for delivery🚚')">Buy Now</button>
+    </div>
+</div>
+<footer>
+    <p>&copy;2026 Jules Fresh fruit Advertisement all right reselved</p>
+</footer>
+</body>
+</html>
