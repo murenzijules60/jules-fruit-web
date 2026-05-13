@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jules Fresh Fruits- Home</title>
-
+<title>Jules Fresh Fruits - Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
 *{
@@ -25,25 +25,60 @@ header{
     justify-content:space-between;
     align-items:center;
 
-   
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:1000;
 }
-header{
-    background:green;
-    color:white;
-    padding:20px 50px;
+.logo{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    gap:12px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.log{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    animation: spin 4s linear infinite;
+}
+@keyframes moveSide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .logo{
+    animation: moveSide 2s ease-in-out infinite;
+}    
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
     font-size:30px;
     font-weight:bold;
+}
+
+.log{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
 nav a{
@@ -51,6 +86,7 @@ nav a{
     text-decoration:none;
     margin:0 15px;
     font-size:18px;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -59,12 +95,15 @@ nav a:hover{
 
 .hero{
     background:url('fruits.jpg') center/cover no-repeat;
-    height:90vh;
+    height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     color:white;
+
+    padding-top:80px;
 }
 
 .hero-content{
@@ -82,59 +121,61 @@ nav a:hover{
     font-size:22px;
     margin-bottom:25px;
 }
-
 .hero-content button{
     background:orange;
-    color:white;
     border:none;
     padding:15px 30px;
-    font-size:18px;
     border-radius:8px;
     cursor:pointer;
+    transition:0.3s;
 }
 
 .hero-content button:hover{
     background:darkorange;
 }
-.preview{
-    padding:50px 30px;
-    background:#e8ffe8;
+
+.hero-content button a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
 }
 footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:40px;
 }
-a{
-    text-decoration: none;
-    color: white;
-}
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🍌Jules Fresh Fruits</div>
+    <div class="logo">
+        <img src="logo.png" class="log" alt="Logo">
+        <span>Jules Fresh Fruits</span>
+    </div>
 
     <nav>
         <a href="#">Home</a>
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
     </nav>
-</header>
 
+</header>
 <section class="hero">
+
     <div class="hero-content">
         <h1>Fresh & Healthy Fruits</h1>
+
         <p>Enjoy natural fruits directly from the farm</p>
 
-        <button><a href="fruits buy.html">
-            Shop Now
-            </a>
+        <button>
+            <a href="fruits buy.html"><i class="fa-solid fa-cart-shopping"></i>  Shop Now</a>
         </button>
     </div>
+
 </section>
 <footer>
     <p>&copy; 2026 Jules Fresh Fruits Market | All Rights Reserved</p>
